@@ -22,7 +22,7 @@ WHERE id = 3;
 -- 5. mark a task as complete
 UPDATE task
 SET status_id = 3
-WHERE id = 3;
+WHERE id = 4;
 
 
 -- 6. DELETE a task

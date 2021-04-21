@@ -15,7 +15,7 @@ CREATE table `genre`(
 
 CREATE TABLE `publisher`(
 `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-`publisher` varchar(255)
+`publisher` varchar(255) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE table `book`(
