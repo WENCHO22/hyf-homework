@@ -1,6 +1,7 @@
 USE hyf_lesson1;
 -- 1. Add a task
-INSERT INTO task(title, description, created, updated, due_date, status_id, user_id) VALUES("Clean the kitchen", "Leave it shining", "2020-10-12 10:37:37", "2020-10-12 12:37:37", "2020-12-25 12:37:37", 1, 2); 
+INSERT INTO task(title, description, created, updated, due_date, status_id, user_id) 
+VALUES("Clean the kitchen", "Leave it shining", "2020-10-12 10:37:37", "2020-10-12 12:37:37", "2020-12-25 12:37:37", 1, 2); 
 
 -- 2. change task title
 UPDATE task
@@ -20,8 +21,8 @@ WHERE id = 3;
 
 -- 5. mark a task as complete
 UPDATE task
-SET status_id = 4
-WHERE id = 3;
+SET status_id = 3
+WHERE id = 4;
 
 
 -- 6. DELETE a task
@@ -30,11 +31,3 @@ WHERE id = 1;
 
 select *
 from task;
-
-
-
-
-
-
-
-
