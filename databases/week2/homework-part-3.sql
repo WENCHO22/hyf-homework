@@ -27,7 +27,7 @@ JOIN task
 ON user_task.task_id = task.id
 JOIN user
 ON user_task.user_id = user.id
-WHERE user.name = "Maryrose Meadows" AND month(task.created) = 9 AND MONTH;
+WHERE user.name = "Maryrose Meadows" AND month(task.created) = 9;
 
 -- Find how many tasks where created in each month, e.g. how many tasks were created in october, how many tasks were created in november, etc. (hint: use group by)
 SELECT monthname(created), count(*) AS number_of_tasks
