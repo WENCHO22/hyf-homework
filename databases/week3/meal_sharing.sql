@@ -12,7 +12,7 @@ USE meal_sharing;
 `when` DATETIME NOT NULL,
 `max_reservations` INT UNSIGNED NOT NULL,
 `price` DECIMAL(8,2) NOT NULL,
-`created_date` TIMESTAMP
+`created_date` DATETIME
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `reservation`(
@@ -155,17 +155,18 @@ from meal
 WHERE PRICE < 50;
 
 -- Get meals that still has available reservations
-SELECT title, max_reservations, SUM(number_of_guests) AS reserved
+SELECT meal.id, meal.title, meal.max_reservations, SUM(reservation.number_of_guests) AS reserved
 FROM meal
-JOIN reservation
+LEFT JOIN reservation
 ON meal.id = meal_id
 GROUP BY meal_id
-HAVING max_reservations > SUM(number_of_guests);
+HAVING max_reservations > reserved OR reserved IS NULL;
 
 -- Get meals that partially match a title. Rød grød med will match the meal with the title Rød grød med fløde
 SELECT *
 FROM meal
 WHERE title LIKE "%bbq%";
+
 -- Get meals that has been created between two dates
 SELECT *
 FROM meal
@@ -175,11 +176,13 @@ WHERE created_date BETWEEN '2021-04-22' AND '2021-04-23';
 SELECT *
 FROM meal
 LIMIT 5;
+
 -- Get the meals that have good reviews
-SELECT meal.title, review.stars
+SELECT meal.title, AVG(review.stars) AS average_review
 FROM meal
 JOIN review ON meal.id = review.meal_id
-WHERE review.stars >=4;
+WHERE review.stars >=4
+GROUP BY meal.title;
 
 -- Get reservations for a specific meal sorted by created_date
 SELECT reservation.id AS reservation_id,  meal.title, reservation.number_of_guests, reservation.created_date AS date_of_reservation
@@ -191,6 +194,6 @@ ORDER BY reservation.created_date;
 -- Sort all meals by average number of stars in the reviews
 SELECT meal.title, avg(review.stars) AS stars
 FROM meal
-JOIN review ON meal.id = review.meal_id
+LEFT JOIN review ON meal.id = review.meal_id
 GROUP BY meal.title
 ORDER BY avg(review.stars) DESC;
