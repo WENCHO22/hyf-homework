@@ -35,10 +35,6 @@ app.get("/large-meals", async (request, response) => {
   response.json(largeMeals);
 });
 
-app.get("/large-meals", async (request, response) => {
-  let largeMeals = mealWithReviews.filter(item => item.maxNumberOfGuests > 10)
-  response.json(largeMeals);
-});
 
 app.get("/meal", async (request, response) => {
   let randomMeal = mealWithReviews[Math.floor(Math.random() * (mealWithReviews.length + 1))]

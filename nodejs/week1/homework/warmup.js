@@ -20,10 +20,10 @@ class Circle{
 
 const myCircle = new Circle(5)
 const myCircle2 = new Circle(10)
-console.log(myCircle.getDiameter)
-console.log(myCircle.getCircumference)
-console.log(myCircle.getArea)
+console.log(myCircle.getDiameter(5))
+console.log(myCircle.getCircumference(5))
+console.log(myCircle.getArea(5))
 
-console.log(myCircle2.getDiameter)
-console.log(myCircle2.getCircumference)
-console.log(myCircle2.getArea)
+console.log(myCircle2.getDiameter(10))
+console.log(myCircle2.getCircumference(10))
+console.log(myCircle2.getArea(10))
