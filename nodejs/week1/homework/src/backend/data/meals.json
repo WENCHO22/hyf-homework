@@ -1,0 +1,26 @@
+[
+    {
+        "id" : 1,
+        "title" : "Indian food in the summer",
+        "maxNumberOfGuests" : 5,
+        "description" : "A nice night out eating delicious indian food",
+        "createdAt" : "2019/12/7 14:34",
+        "price" : 67
+    },
+    {
+        "id" : 2,
+        "title" : "Argentinean grill steak",
+        "maxNumberOfGuests" : 10,
+        "description" : "Grilled meat in the steak",
+        "createdAt" : "2020/12/7 14:34",
+        "price" : 100
+    },
+    {
+        "id" : 3,
+        "title" : "All you can eat buffet",
+        "maxNumberOfGuests" : 50,
+        "description" : "All-you-can-eat of the best food in town",
+        "createdAt" : "2020/1/7 14:34",
+        "price" : 120
+    }
+]
