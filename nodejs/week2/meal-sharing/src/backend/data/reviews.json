@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "numberOfStars": 3,
+      "content": "Best meal ever",
+      "mealId": 1,
+      "createdAt": "2020/2/7 15:00"
+    },
+    {
+      "id": 2,
+      "numberOfStars": 5,
+      "content": "Best steak I had in MY LIFE",
+      "mealId": 2,
+      "createdAt": "2020/2/7 14:34"
+    },
+    {
+      "id": 2,
+      "numberOfStars": 5,
+      "content": "Truly amazing steak",
+      "mealId": 2,
+      "createdAt": "2020/2/9 12:30"
+    }
+  ]
