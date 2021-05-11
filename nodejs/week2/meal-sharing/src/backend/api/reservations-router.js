@@ -11,10 +11,9 @@ router.get("/:id", async (request, response) => {
             return;
         }
         if (reservationId <= reservations.length) {
-            const reservationById = reservations.filter((reservation) => reservation.id === reservationId);
-            response.json(reservationById[0]);
+            response.json(reservation.find(r => r.id === reservationId));
         } else {
-            response.json({});
+            response.sendStatus(500);
         }
     } catch (error) {
         throw error;

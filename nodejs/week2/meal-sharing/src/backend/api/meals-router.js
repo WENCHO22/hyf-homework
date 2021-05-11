@@ -3,21 +3,19 @@ const router = express.Router();
 
 const meals = require("./../data/meals.json");
 
-router.get("/", async (request, response) => {
+router.get("/:id", async (request, response) => {
   try {
     const mealId = parseInt(request.params.id);
     if (isNaN(mealId)) {
       response.status(400).json("id must be an integer");
       return;
     } if (mealId <= meals.length) {
-      const mealById = meals.filter((meal) => meal.id === mealId);
-      console.log(mealById);
-      response.json(mealById[0]);
+      response.json(meals.find(meal => meal.id === mealId));
     } else {
-      response.json({});
+      response.sendStatus(404);
     }
   } catch (error) {
-    throw error;
+    response.sendStatus(500);
   }
 });
 
@@ -31,7 +29,7 @@ router.get("/", (request, response) => {
         response.status(400).send(`Maximum price should be an integer`)
         return;
       }
-      filteredMeals = filteredMeals.filter((meal) => meal.price <= maxPrice);
+      filteredMeals = filteredMeals.filter(meal => meal.price <= maxPrice);
     }
 
     if ('title' in request.query) {

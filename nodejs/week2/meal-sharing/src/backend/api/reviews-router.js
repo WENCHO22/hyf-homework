@@ -12,13 +12,12 @@ router.get("/:id", async (request, response) => {
             return;
         }
         if (reviewId <= reviews.length) {
-            const reviewById = reviews.filter((review) => review.id === reviewId);
-            response.json(reviewById[0]);
+            response.json(reviews.find(rev=> rev.id === reviewId));
         } else {
-            response.json({});
+            response.sendStatus(404);
         }
     } catch (error) {
-        throw error;
+        response.sendStatus(500)
     }
 });
 
