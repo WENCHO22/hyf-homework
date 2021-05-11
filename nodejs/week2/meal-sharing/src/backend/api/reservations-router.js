@@ -13,10 +13,10 @@ router.get("/:id", async (request, response) => {
         if (reservationId <= reservations.length) {
             response.json(reservation.find(r => r.id === reservationId));
         } else {
-            response.sendStatus(500);
+            response.sendStatus(404);
         }
     } catch (error) {
-        throw error;
+        response.sendStatus(500)
     }
 });
 
