@@ -1,24 +1,8 @@
-import { useCallback, useEffect, useState } from "react";
-
-const todos = [
-  {
-    id: 1,
-    description: "Get out of bed",
-  },
-  {
-    id: 2,
-    description: "Brush teeth",
-  },
-  {
-    id: 3,
-    description: "Eat breakfast",
-  },
-]
-
+import {useState} from "react";
+import todos from "./todos.json"
 
 function ListItems(props) {
   const [list, setList] = useState(props.list)
-  console.log(list)
   function Remove(id) {
     setList(list => list.filter(item => item.id !== id))
   }
@@ -35,7 +19,6 @@ function ListItems(props) {
 }
 
 function List(props) {
-  console.log(props)
   if (props.list.length === 0) {
     return <p>No items</p>
   } else {
