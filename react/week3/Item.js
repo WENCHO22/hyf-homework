@@ -2,14 +2,12 @@ import React, {useState} from "react"
 import Button from "./Buttons"
 
 function Item({item, remove, todos, setTodos}) {
-    const [isChecked, setChecked] = useState(false)    
+    const [isChecked, setIsChecked] = useState(false)    
     const [description, setDescription] = useState(item.description)
     const [edit, setEdit] = useState(false)
-
-    console.log(item)
   
     function check() {
-      setChecked(!isChecked)
+     setIsChecked(!isChecked)
     }   
 
 
