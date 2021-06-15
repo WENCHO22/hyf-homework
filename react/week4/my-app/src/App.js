@@ -31,7 +31,7 @@ function App() {
 
   return (
     <>
-      <Header title="GitHub User Searcher" />
+      <h1>GitHub User Searcher</h1>
       <UsersContext.Provider value={{query, setQuery, loading, queryResult}}>
         <SearchInput query={query} setQuery={setQuery} />      
         <SearchResults loading={loading} queryResult={queryResult} query={query} />
