@@ -1,5 +1,7 @@
 lettuce
 tomato
-broccoli
+rucula
 spinach
 onion
+carrot
+red peppers
